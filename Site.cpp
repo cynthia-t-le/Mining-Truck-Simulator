@@ -2,11 +2,9 @@
 
 #include "Site.h"
 
-constexpr int MIN_MINING_MINUTES = 60;  // Minimum amount of mining druation (1 hr) in minutes
-constexpr int MAX_MINING_MINUTES = 300; // Maximum amount of mining druation (5 hr) in minutes
-
-// Utility function to generate a random number between min (1hr) and max (5hr). We use this function to get a random duration
-// of mining time at the sites.
+// --------------------------------------------------------
+// Public Member Functions
+// --------------------------------------------------------
 int Site::getRandomMinedDuration()
 {
     static std::random_device rd;

@@ -4,17 +4,19 @@
 class Station
 {
 public:
-  explicit Station(int id);
+  // Constructor
+  explicit Station(int id) : m_id(id), m_totalHeliumReceived(0), m_totalTrucksUnloaded(0) {}
 
-  int getId() const;
+  // Public member functions
+  int getId() const { return m_id; }
 
-  int getTotalHeliumReceived() const;
+  int getTotalHeliumReceived() const { return m_totalHeliumReceived; }
 
-  void setTotalHeliumReceived(const int helium);
+  void setTotalHeliumReceived(const int helium) { m_totalHeliumReceived = helium; }
 
-  int getTotalTrucksUnloaded() const;
+  int getTotalTrucksUnloaded() const { return m_totalTrucksUnloaded; }
 
-  void incrementTotalTrucksUnloaded();
+  void incrementTotalTrucksUnloaded() { m_totalTrucksUnloaded++; }
 
 private:
   int m_id;                  // Station id number

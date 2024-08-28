@@ -8,10 +8,6 @@
 class Truck
 {
 public:
-  static constexpr int TRAVEL_TIME = 30;       // in mins
-  static constexpr int UNLOAD_TIME = 5;        // in mins
-  static constexpr int HELIUM_MINING_RATE = 1; // 1 helium/min
-
   enum State
   {
     MINING,
@@ -20,55 +16,62 @@ public:
     TRAVEL_TO_MINING_SITE
   };
 
-  Truck(const int id, const int time);
+  // Constructor
+  explicit Truck(const int id) : m_id(id), m_currentState(MINING), m_currentMiningTime(0), m_currentMinedHelium(0),
+                                 m_currentTripQueueWait(0), m_totalMinedHelium(0), m_totalMiningTime(0),
+                                 m_totalUnloadedTrips(0), m_isInDataQueue(false), m_totalQueueWait(0) {}
 
-  int getId() const;
+  // Public member functions
+  int getId() const { return m_id; }
 
-  int getCreationTime() const;
+  State getCurrentState() const { return m_currentState; }
 
-  State getCurrentState() const;
+  void setCurrentState(const State newState) { m_currentState = newState; }
 
-  void setCurrentState(const State newState);
+  int getCurrentMiningTime() const { return m_currentMiningTime; }
 
-  int getCurrentMiningTime() const;
+  void setCurrentMiningTime(const int duration) { m_currentMiningTime = duration; }
 
-  void setCurrentMiningTime(const int duration);
+  int getCurrentMinedHelium() { return m_currentMinedHelium; }
 
-  int getCurrentMinedHelium();
+  void setCurrentMinedHelium(const int value) { m_currentMinedHelium = value; }
 
-  void setCurrentMinedHelium(const int value);
+  int getCurrentTripQueueWait() { return m_currentTripQueueWait; }
 
-  int getCurrentTripQueueWait();
+  void setCurrentTripQueueWait(const int value) { m_currentTripQueueWait = value; }
 
-  void setCurrentTripQueueWait(const int value);
+  int getTotalMiningTime() const { return m_totalMiningTime; }
 
-  int getTotalMiningTime() const;
+  void setTotalMiningTime(const int time) { m_totalMiningTime = time; }
 
-  void setTotalMiningTime(const int time);
+  int getTotalMinedHelium() const { return m_totalMinedHelium; }
 
-  int getTotalMinedHelium() const;
+  void setTotalMinedHelium(const int value) { m_totalMinedHelium = value; }
 
-  void setTotalMinedHelium(const int value);
+  int getTotalNumberUnloads() const { return m_totalUnloadedTrips; }
 
-  int getTotalNumberUnloads() const;
+  void incrementTotalNumberUnloads() { m_totalUnloadedTrips++; }
 
-  void incrementTotalNumberUnloads();
+  int getTotalQueueWait() const { return m_totalQueueWait; }
 
-  int getTotalQueueWait() const;
+  void setTotalQueueWait(const int value) { m_totalQueueWait = value; }
 
-  void setTotalQueueWait(const int value);
+  bool getIsInDataQueue() const { return m_isInDataQueue; }
 
-  double calculateAverageQueueTime(const int totalQueueWait, const int totalElapsedTime);
+  void setIsInDataQueue(const bool flag) { m_isInDataQueue = flag; }
 
-  void saveMiningDuration(const int value);
+  void saveMiningDuration(const int value) { m_miningDurations.push_back(value); }
+
+  double calculateAverageQueueTime(const int totalQueueWait, const int totalElapsedTime) const;
+
+  double convertAverageQueueTimeToPercent(const double averageQueueTime) const;
 
   int calculateTotalMiningDuration() const;
 
-  int calculateMaximumHeliumPossible(const int miningDuration);
+  double convertTruckEfficiencyToPercent(const double truckEfficiency) const;
 
 private:
   int m_id;                           // Truck id
-  int m_creationTime;                 // Time difference between when simulation starts and when Truck object is created
   State m_currentState;               // Current truck state
   int m_currentMiningTime;            // Current mining trip time in minutes
   int m_currentMinedHelium;           // Helium mined in current trip
@@ -77,6 +80,7 @@ private:
   int m_totalMinedHelium;             // Total helium mined so far (eg., 1 minute = 1 unit of helium)
   int m_totalUnloadedTrips;           // Total number of unload trips
   int m_totalQueueWait;               // Total number of time truck spent waiting in the queue (eg., 1 count = 1 min)
+  bool m_isInDataQueue;               // Let us know if this truck is in the shared data queue waiting to be processed by station
   std::vector<int> m_miningDurations; // for statistic purposes
 };
 

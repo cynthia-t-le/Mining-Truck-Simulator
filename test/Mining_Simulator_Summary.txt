@@ -1,0 +1,17 @@
+Starting mining simulation!!! Number of trucks = 1; number of stations = 1
+
+TRUCK 0 FINAL RESULTS:
+Total Helium Mined                       = 2727
+Total Mining Duration                    = 2727 minutes
+Total Successful Unloaded Trips          = 18
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
+Calculated Mining Duration for Checking  = 2727 minutes
+Maximum Helium Possible                  = 3570
+Truck Efficiency                         = 76.39%
+Truck Ending Elapsed Time                = 4334
+
+STATION 0 FINAL RESULTS:
+Total Helium Received          = 2727
+Total Trucks Unloaded          = 18
+
