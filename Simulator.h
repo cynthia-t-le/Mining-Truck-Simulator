@@ -16,7 +16,7 @@ public:
     static constexpr int kTruckTravelTimeMins = 30;        // in mins
     static constexpr int kUnloadTimeMins = 5;              // in mins
     static constexpr int kHeliumMiningRatePerMin = 1;      // 1 helium/min
-    static constexpr int kOneCycleTimeMins = Site::MAX_MINING_MINUTES + (kTruckTravelTimeMins * 2) + kUnloadTimeMins;
+    static constexpr int kOneCycleTimeMins = Site::MAX_MINING_MINUTES + (Simulator::kTruckTravelTimeMins * 2) + Simulator::kUnloadTimeMins;
 
     // Constructor
     Simulator(const int numTrucks, const int numStations) : numTrucks(numTrucks), numStations(numStations) {}

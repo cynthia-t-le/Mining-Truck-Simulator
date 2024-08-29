@@ -17,9 +17,9 @@ double Truck::convertAverageQueueTimeToPercent(const double averageQueueTime) co
 int Truck::calculateTotalMiningDuration() const
 {
     int totalCalcMiningDur = 0;
-    for (const auto &duration : m_miningDurations)
+    for (const auto &miningDuration : m_miningDurations)
     {
-        totalCalcMiningDur += duration;
+        totalCalcMiningDur += miningDuration;
     }
     return totalCalcMiningDur;
 }

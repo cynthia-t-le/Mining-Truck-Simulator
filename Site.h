@@ -10,9 +10,9 @@ public:
   // Constructor
   Site() {};
 
-  // Public member functions
-  int getRandomMinedDuration(); // Utility function to generate a random number between min (60 mins) and max (300 mins).
-                                // Use this function to get a random duration of mining time at the sites.
+  // Public static member functions
+  static int getRandomMinedDuration(); // Utility function to generate a random number between min (60 mins) and max (300 mins).
+                                       // Use this function to get a random number of mining time at the sites.
 };
 
 #endif

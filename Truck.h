@@ -30,7 +30,7 @@ public:
 
   int getCurrentMiningTime() const { return m_currentMiningTime; }
 
-  void setCurrentMiningTime(const int duration) { m_currentMiningTime = duration; }
+  void setCurrentMiningTime(const int time) { m_currentMiningTime = time; }
 
   int getCurrentMinedHelium() { return m_currentMinedHelium; }
 
