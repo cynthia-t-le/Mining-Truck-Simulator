@@ -117,8 +117,8 @@ void Simulator::simulateTruck(int id)
     {
         printMessage(composeDebugMsg(std::format("Beginning of while loop, truck id = {}; elapsed time = {}",
                                                  miningTruck.getId(), elapsedTime)));
-
-        switch (miningTruck.getCurrentState())
+        Truck::State currentState = miningTruck.getCurrentState();
+        switch (currentState)
         {
         case Truck::State::MINING:
         {
@@ -166,6 +166,19 @@ void Simulator::simulateTruck(int id)
                 miningTruck.getId(), miningTruck.getCurrentMinedHelium(),
                 miningTruck.getTotalMinedHelium(), miningTruck.getTotalMiningTime(), elapsedTime)));
 
+            miningTruck.setCurrentState(Truck::State::TRAVEL_TO_MINING_SITE); // Update trucks state the next state
+            break;
+        }
+        default:
+        {
+            sleepTime = 0;
+            printMessage(composeDebugMsg(std::format(
+                "Error! Mining truck id = {} unknown truck state.", miningTruck.getId())));
+            break;
+        }
+        }
+        if (currentState == Truck::State::UNLOADING)
+        {
             // Push truck to dataQueue
             std::unique_lock<std::mutex> lock(dataVectorMutex);
             dataVector.push_back(&miningTruck);
@@ -207,19 +220,7 @@ void Simulator::simulateTruck(int id)
                         miningTruck.getId())));
                 }
             }
-
-            miningTruck.setCurrentState(Truck::State::TRAVEL_TO_MINING_SITE); // Update trucks state the next state
-            break;
         }
-        default:
-        {
-            sleepTime = 0;
-            printMessage(composeDebugMsg(std::format(
-                "Error! Mining truck id = {} unknown truck state.", miningTruck.getId())));
-            break;
-        }
-        }
-
         // Corner case check - if during last iteration a truck is mining for
         // a time that will be greater than 72 hours, cap the sleep duration so that it is 72 hours
         if ((elapsedTime + sleepTime) > kMaxMiningDurationMins)
