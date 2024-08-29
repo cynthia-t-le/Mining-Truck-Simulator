@@ -206,7 +206,7 @@ void Simulator::simulateTruck(int id)
                             elapsedTime, miningTruck.getId(),
                             miningTruck.getCurrentMinedHelium(), currentTripQueueWait)));
 
-                        std::this_thread::sleep_for(std::chrono::microseconds(waitTime));
+                        std::this_thread::sleep_for(std::chrono::milliseconds(waitTime));
                         elapsedTime += waitTime;
                     }
                 }
@@ -228,7 +228,7 @@ void Simulator::simulateTruck(int id)
             sleepTime = (kMaxMiningDurationMins - elapsedTime);
         }
 
-        std::this_thread::sleep_for(std::chrono::microseconds(sleepTime)); // Must simulate truck's action
+        std::this_thread::sleep_for(std::chrono::milliseconds(sleepTime)); // Must simulate truck's action
         elapsedTime += sleepTime;
     }
 
@@ -275,7 +275,7 @@ void Simulator::simulateStation(int id)
                 truck->getCurrentMinedHelium(), truck->getTotalMinedHelium(),
                 unloadStation.getTotalHeliumReceived())));
 
-            std::this_thread::sleep_for(std::chrono::microseconds(Simulator::kUnloadTimeMins)); // Simulate unloading time
+            std::this_thread::sleep_for(std::chrono::milliseconds(Simulator::kUnloadTimeMins)); // Simulate unloading time
 
             lock.lock(); // Re-lock the mutex before checking the condition again
         }
