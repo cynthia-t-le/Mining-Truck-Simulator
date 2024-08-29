@@ -49,8 +49,6 @@ private:
 
     void simulateStation(int id);
 
-    int getElapsedTime();
-
     bool didStationProcessTruck(const Truck truck, const int position);
 
     void printTruckResults(const Truck &truck, int truckElapsedTime) const;

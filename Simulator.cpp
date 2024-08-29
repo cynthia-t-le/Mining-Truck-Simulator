@@ -113,12 +113,14 @@ void Simulator::simulateTruck(int id)
 {
     printMessage(composeDebugMsg(std::format("Debug!!! in simulateTruck(); truck id = {}", id)));
     Truck miningTruck(id);
+    int elapsedTime = 0;   // Initialize to 0 to simulate the start of simulation time
     addTruck(miningTruck); // Need this for unit test later
     Site miningSite = Site();
-    while (getElapsedTime() < maxMiningDuration)
+
+    while (elapsedTime < maxMiningDuration)
     {
         printMessage(composeDebugMsg(std::format("Debug!!! in while loop, truck id = {}; elapsed time = {}",
-                                                 miningTruck.getId(), getElapsedTime())));
+                                                 miningTruck.getId(), elapsedTime)));
         int sleepTime = 0;
         Truck::State curState = miningTruck.getCurrentState();
         switch (miningTruck.getCurrentState())
@@ -136,7 +138,7 @@ void Simulator::simulateTruck(int id)
             printMessage(composeDebugMsg(std::format("Debug!!! Mining truck id = {}; elapsed time = {}; mining time = {};"
                                                      " current helium = {}; total mining time = {}.",
                                                      miningTruck.getId(),
-                                                     getElapsedTime(), sleepTime, miningTruck.getCurrentMinedHelium(),
+                                                     elapsedTime, sleepTime, miningTruck.getCurrentMinedHelium(),
                                                      miningTruck.getTotalMiningTime())));
             miningTruck.setCurrentState(Truck::State::TRAVEL_TO_UNLOAD_STATION);
             break;
@@ -162,7 +164,7 @@ void Simulator::simulateTruck(int id)
             printMessage(composeDebugMsg(std::format(
                 "Debug!!! Unloading truck id = {}; elapsed time = {}; "
                 "current_helium = {}; total_helium = {}; total mining time = {}",
-                miningTruck.getId(), getElapsedTime(), miningTruck.getCurrentMinedHelium(),
+                miningTruck.getId(), elapsedTime, miningTruck.getCurrentMinedHelium(),
                 miningTruck.getTotalMinedHelium(), miningTruck.getTotalMiningTime())));
             miningTruck.setCurrentState(Truck::State::TRAVEL_TO_MINING_SITE);
             break;
@@ -183,7 +185,7 @@ void Simulator::simulateTruck(int id)
                 "Debug!!! Pushing truck id = {} to vector position = {}; with helium amount = {} at elapsed time = {} "
                 "to dataQueue to unload helium.",
                 miningTruck.getId(), truckPositionInVector,
-                miningTruck.getCurrentMinedHelium(), getElapsedTime())));
+                miningTruck.getCurrentMinedHelium(), elapsedTime)));
             miningTruck.setIsInDataQueue(true);
             dataCond.notify_one(); // Notify a station that new helium is available for unloading
             lock.unlock();         // Unlock shared data queue so station can check if there is a truck on it
@@ -201,10 +203,11 @@ void Simulator::simulateTruck(int id)
                         printMessage(composeDebugMsg(std::format(
                             "Debug!!! Need to unload helium but must wait. Elapsed time = {}; "
                             "Truck id = {}; helium amount = {}; current queue wait time = {}.",
-                            getElapsedTime(), miningTruck.getId(),
+                            elapsedTime, miningTruck.getId(),
                             miningTruck.getCurrentMinedHelium(), currentTripQueueWait)));
 
                         std::this_thread::sleep_for(std::chrono::milliseconds(waitTime));
+                        elapsedTime += waitTime;
                     }
                 }
                 else
@@ -217,14 +220,20 @@ void Simulator::simulateTruck(int id)
             }
         }
 
+        // Corner case check - if during last iteration a truck is mining for
+        // a time that will be greater than 72 hours, cap the sleep duration so that it is 72 hours
+        if ((elapsedTime + sleepTime) > maxMiningDuration)
+        {
+            // Overwrite sleepTime to ensure truck simulate over 72 hour
+            sleepTime = (maxMiningDuration - elapsedTime);
+        }
+
         std::this_thread::sleep_for(std::chrono::milliseconds(sleepTime)); // Must simulate truck's action
+        elapsedTime += sleepTime;
     }
 
-    // Print out elapsed time when we're done with mining simulation
-    // printMessage(composeDebugMsg(std::format("Ending elapsed time = {}.", getElapsedTime())));
-
     // Print results for each truck
-    printTruckResults(miningTruck, getElapsedTime());
+    printTruckResults(miningTruck, elapsedTime);
 }
 
 void Simulator::simulateStation(int id)
@@ -281,13 +290,6 @@ void Simulator::simulateStation(int id)
     printStationResults(unloadStation);
 }
 
-int Simulator::getElapsedTime()
-{
-    auto now = std::chrono::steady_clock::now();
-    int elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(now - startTime).count();
-    return elapsedTime;
-}
-
 bool Simulator::didStationProcessTruck(const Truck truck, const int position)
 {
     std::unique_lock<std::mutex> lock(dataVectorMutex);
@@ -311,7 +313,7 @@ bool Simulator::didStationProcessTruck(const Truck truck, const int position)
     }
 }
 
-void Simulator::printTruckResults(const Truck &truck, int truckElapsedTime) const
+void Simulator::printTruckResults(const Truck &truck, const int truckElapsedTime) const
 {
     double averageQueueTime = truck.calculateAverageQueueTime(truck.getTotalQueueWait(), maxMiningDuration);
     double truckEfficiency = static_cast<double>((truck.getTotalMinedHelium()) / static_cast<double>(Simulator::calculateMaximumHeliumPossible(maxMiningDuration)));
