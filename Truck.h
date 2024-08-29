@@ -4,7 +4,6 @@
 
 #include <vector>
 
-// Doxygen:  assume 1 minute mining = 1 unit of helium for all mining sites
 class Truck
 {
 public:

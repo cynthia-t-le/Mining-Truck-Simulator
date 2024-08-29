@@ -4,11 +4,8 @@
 class Site
 {
 public:
-  static constexpr int MIN_MINING_MINUTES = 60;  // Minimum amount of mining druation (1 hr) in minutes
-  static constexpr int MAX_MINING_MINUTES = 300; // Maximum amount of mining druation (5 hr) in minutes
-
-  // Constructor
-  Site() {};
+  static constexpr int kMinMiningMinutes = 60;  // Minimum amount of mining druation (1 hr) in minutes
+  static constexpr int kMaxMiningMinutes = 300; // Maximum amount of mining druation (5 hr) in minutes
 
   // Public static member functions
   static int getRandomMinedDuration(); // Utility function to generate a random number between min (60 mins) and max (300 mins).

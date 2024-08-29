@@ -5,39 +5,31 @@
 #include "../Station.h"
 #include "../Truck.h"
 
-constexpr int maxSimulationDuration = 72 * 60;
-constexpr int travelTimeToSite = 30;
-constexpr int travelTimeToStation = 30;
-constexpr int unloadingTime = 5;
-constexpr int kMinRandomHelium = 60;  // per trip
-constexpr int kMaxRandomHelium = 300; // per trip
-
 // Compile with this command
 // cd test
-// g++ .\test_main.cpp ..\Simulator.cpp ..\Truck.cpp ..\Station.cpp ..\Site.cpp -o test -std=c++20 -pthread
-// .\test.exe
+// g++ .\test_main.cpp ..\Simulator.cpp ..\Truck.cpp ..\Site.cpp -o Unit_Test -std=c++20 -pthread
+// .\Unit_Test.exe
 
-TEST_CASE("Check for random number generated correctly.")
+TEST_CASE("Random Number Generator.")
 {
 
-    Site site = Site();
-    int randomNum = site.getRandomMinedDuration();
+    int randomNum = Site::getRandomMinedDuration();
     REQUIRE(randomNum >= 60);
     REQUIRE(randomNum <= 300);
 }
 
-TEST_CASE("Mining simulation to check end results after 72 hours.")
+TEST_CASE("Mining Simulation for 30 trucks and 1 station.")
 {
-    int numTrucks = 30;
-    int numStations = 1;
+    const int numTrucks = 30;
+    const int numStations = 3;
 
     Simulator miningSim(numTrucks, numStations);
     miningSim.startSimulator();
     std::vector<Truck> trucks = miningSim.getTrucks();
     std::vector<Station> stations = miningSim.getStations();
 
-    int maxPossibleHeliumMined = miningSim.calculateMaximumHeliumPossible(maxSimulationDuration);
-    int maxTripPossible = miningSim.calculateMaximumTripsPossible(maxSimulationDuration);
+    int maxPossibleHeliumMined = miningSim.calculateMaximumHeliumPossible(Simulator::kMaxMiningDurationMins);
+    int maxTripPossible = miningSim.calculateMaximumTripsPossible(Simulator::kMaxMiningDurationMins);
 
     int totalStationHeliumSum = 0; // Total helium from all of the stations added together
     int totalTruckHeliumSum = 0;   // Total helium from all of the trucks added together
@@ -45,7 +37,7 @@ TEST_CASE("Mining simulation to check end results after 72 hours.")
     int totalStationUnloadSum = 0; // Total trucks unloaded from all of the stations added together
     int totalTruckUnloadSum = 0;   // Total successful unload from all of the trucks added together
 
-    for (auto truck : trucks)
+    for (auto &truck : trucks)
     {
         // Check to see if truck's total mined helium exceeds the max possible helium mined in 72 hours
         int maxHeliumMined = truck.getTotalMinedHelium();
@@ -62,7 +54,7 @@ TEST_CASE("Mining simulation to check end results after 72 hours.")
         totalTruckUnloadSum += truck.getTotalNumberUnloads();
     }
 
-    for (auto station : stations)
+    for (auto &station : stations)
     {
         // Get the summation of all the helium mined unloaded at the stations
         totalStationHeliumSum += station.getTotalHeliumReceived();

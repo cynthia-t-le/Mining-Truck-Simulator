@@ -36,7 +36,7 @@ cd Mining-Truck-Simulator
 cd test
 
 # Compile and produce the executable
-g++ .\test_main.cpp ..\Simulator.cpp ..\Truck.cpp ..\Station.cpp ..\Site.cpp -o UnitTest -std=c++20 -pthread
+g++ .\test_main.cpp ..\Simulator.cpp ..\Truck.cpp ..\Site.cpp -o UnitTest -std=c++20 -pthread
 
 # The executable should now be in your directory as UnitTest.exe
 ```
@@ -62,6 +62,25 @@ cd Mining-Truck-Simulator
 
 # View "Mining_Simulator_Summary.txt" to see the end results of each truck's
 # efficiency and each station's efficiency
+```
+
+## Run the Unit Tests
+The previous section "How to Create the Executable" must be completed in order to continue. To run the unit tests, follow the steps below:
+```bash
+# Open a terminal (Command Prompt or PowerShell)
+
+# Navigate to the project directory
+cd Mining-Truck-Simulator
+
+# Navigate to the test director
+cd test
+
+# Confirm Unit_Test.exe is in the working path and run the executable
+.\Unit_Test.exe
+
+# Wait for program to finish and confirm that the terminal shows
+===============================================================================
+All tests passed
 ```
 
 
