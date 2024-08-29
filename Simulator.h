@@ -11,11 +11,12 @@
 class Simulator
 {
 public:
-    static constexpr int maxMiningDuration = 72 * 60; // in minutes (72 hours * 60 minutes), during simulation 1 milliseconds = 1 minute
-    static constexpr int TRAVEL_TIME = 30;            // in mins
-    static constexpr int UNLOAD_TIME = 5;             // in mins
-    static constexpr int HELIUM_MINING_RATE = 1;      // 1 helium/min
-    static constexpr int ONE_CYCLE_TIME = Site::MAX_MINING_MINUTES + (Simulator::TRAVEL_TIME * 2) + Simulator::UNLOAD_TIME;
+    // Static constants
+    static constexpr int kMaxMiningDurationMins = 72 * 60; // in minutes (72 hours * 60 minutes), during simulation 1 milliseconds = 1 minute
+    static constexpr int kTruckTravelTimeMins = 30;        // in mins
+    static constexpr int kUnloadTimeMins = 5;              // in mins
+    static constexpr int kHeliumMiningRatePerMin = 1;      // 1 helium/min
+    static constexpr int kOneCycleTimeMins = Site::MAX_MINING_MINUTES + (kTruckTravelTimeMins * 2) + kUnloadTimeMins;
 
     // Constructor
     Simulator(const int numTrucks, const int numStations) : numTrucks(numTrucks), numStations(numStations) {}
@@ -23,13 +24,13 @@ public:
     // Public member functions
     void startSimulator();
 
-    std::vector<Truck> getTrucks() const { return _trucks; }
+    std::vector<Truck> getTrucks() const { return trucks; }
 
-    void addTruck(Truck truck) { _trucks.push_back(truck); }
+    void addTruck(Truck truck) { trucks.push_back(truck); }
 
-    std::vector<Station> getStations() const { return _stations; }
+    std::vector<Station> getStations() const { return stations; }
 
-    void addStation(Station station) { _stations.push_back(station); }
+    void addStation(Station station) { stations.push_back(station); }
 
     // Public static member functions
     static int calculateMaximumTripsPossible(const int totalSimulationTime);
@@ -37,12 +38,12 @@ public:
     static int calculateMaximumHeliumPossible(const int totalSimulationTime);
 
 private:
-    std::vector<std::thread> miningTruckThreads;
-    std::vector<std::thread> unloadStationThreads;
-    int numTrucks;
-    int numStations;
-    std::vector<Truck> _trucks;
-    std::vector<Station> _stations;
+    int numTrucks;                                 // Value defined by user input for total number of trucks
+    int numStations;                               // Value defined by user input for total number of stations
+    std::vector<std::thread> miningTruckThreads;   // To store all mining trucks and simulate each truck
+    std::vector<std::thread> unloadStationThreads; // To store all unloading stations and simulate each station
+    std::vector<Truck> trucks;                     // To store all trucks for unit testing purposes
+    std::vector<Station> stations;                 // To store all stations for unit testing purposes
 
     // Private member functions
     void simulateTruck(int id);
