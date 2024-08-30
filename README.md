@@ -1,6 +1,9 @@
 # Mining Simulator
 
-Mining Simulator is an executable that will simulate a lunar Helium-3 space mining operation over a period of a continuous 72 hours. It will produce an output file that reports the efficiency of each mining truck and each unloading station.
+Mining Simulator is an executable that will simulate a lunar Helium-3 space mining operation over a period of a continuous 72 hours. It will produce an output file that reports the efficiency of each mining truck and each unloading station. The program will create N number of Truck threads and M number of Station threads. All Trucks start mining simultaneously for 72 hours and once it is ready to be unloaded, it will join the shared data queue for the Stations to grab and process. 
+
+## Simulator Assumptions
+The Mining Simulator assumes that 1 unit of helium is mined per minute. It also assumes that 1 millisecond of CPU time equates to 1 minute of simulation time. 
 
 ## Build Dependencies
 - C++ compiler supporting C++20, tested with
