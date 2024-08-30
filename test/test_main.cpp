@@ -5,11 +5,6 @@
 #include "../include/Station.h"
 #include "../include/Truck.h"
 
-// Compile with this command
-// cd test
-// g++ .\test_main.cpp ..\Simulator.cpp ..\Truck.cpp ..\Site.cpp -o Unit_Test -std=c++20 -pthread
-// .\Unit_Test.exe
-
 TEST_CASE("Random Number Generator.")
 {
 
