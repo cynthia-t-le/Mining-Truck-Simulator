@@ -18,18 +18,24 @@ TEST_CASE("Random Number Generator.")
     REQUIRE(randomNum <= 300);
 }
 
-TEST_CASE("Mining Simulation for 30 trucks and 1 station.")
+TEST_CASE("Mining Simulation for 30 trucks and 3 station.")
 {
-    const int numTrucks = 30;
-    const int numStations = 3;
+    int numTrucks = 30;
+    int numStations = 3;
 
     Simulator miningSim(numTrucks, numStations);
     miningSim.startSimulator();
     std::vector<Truck> trucks = miningSim.getTrucks();
     std::vector<Station> stations = miningSim.getStations();
 
-    int maxPossibleHeliumMined = miningSim.calculateMaximumHeliumPossible(Simulator::kMaxMiningDurationMins);
-    int maxTripPossible = miningSim.calculateMaximumTripsPossible(Simulator::kMaxMiningDurationMins);
+    REQUIRE(trucks.size() == numTrucks);
+    REQUIRE(stations.size() == numStations);
+
+    int maxPossibleHeliumMined = miningSim.calcMaxHeliumPossible();
+    int maxTripPossible = miningSim.calcMaxTripsPossible();
+
+    int minTripPossible = miningSim.calcMinTripsPossible();
+    int minPossibleHeliumMined = miningSim.calcMinHeliumPossible();
 
     int totalStationHeliumSum = 0; // Total helium from all of the stations added together
     int totalTruckHeliumSum = 0;   // Total helium from all of the trucks added together
@@ -39,9 +45,12 @@ TEST_CASE("Mining Simulation for 30 trucks and 1 station.")
 
     for (auto &truck : trucks)
     {
+        int heliumMined = truck.getTotalMinedHelium();
+        // Check to see if truck's total mined helium is less than min possible helium mined in 72 hours
+        REQUIRE(heliumMined >= minPossibleHeliumMined);
+
         // Check to see if truck's total mined helium exceeds the max possible helium mined in 72 hours
-        int maxHeliumMined = truck.getTotalMinedHelium();
-        REQUIRE(maxHeliumMined <= maxPossibleHeliumMined);
+        REQUIRE(heliumMined <= maxPossibleHeliumMined);
 
         // Get the truck's total unloaded to compare against min and max
         int totalNumberUnloads = truck.getTotalNumberUnloads();

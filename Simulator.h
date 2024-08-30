@@ -27,16 +27,20 @@ public:
 
     std::vector<Truck> getTrucks() const { return m_trucks; }
 
-    void addTruck(Truck truck) { m_trucks.push_back(truck); }
+    void addTruck(const Truck &truck) { m_trucks.push_back(truck); }
 
     std::vector<Station> getStations() const { return m_stations; }
 
     void addStation(Station station) { m_stations.push_back(station); }
 
     // Public static member functions
-    static int calculateMaximumTripsPossible(const int totalSimulationTime);
+    static int calcMinTripsPossible(); // Per truck
 
-    static int calculateMaximumHeliumPossible(const int totalSimulationTime);
+    static int calcMaxTripsPossible(); // Per truck
+
+    static int calcMinHeliumPossible(); // Per truck
+
+    static int calcMaxHeliumPossible(); // Per truck
 
 private:
     int m_numTrucks;                                 // Value defined by user input for total number of trucks
