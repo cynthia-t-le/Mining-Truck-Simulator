@@ -9,9 +9,9 @@ double Truck::calculateAverageQueueTime(const int totalQueueWait, const int tota
     return (static_cast<double>(totalQueueWait) / static_cast<double>(totalElapsedTime));
 }
 
-double Truck::convertAverageQueueTimeToPercent(const double averageQueueTime) const
+double Truck::convertToPercent(const double value) const
 {
-    return (averageQueueTime * 100.0);
+    return (value * 100.0);
 }
 
 int Truck::calculateTotalMiningDuration() const
@@ -22,9 +22,4 @@ int Truck::calculateTotalMiningDuration() const
         totalCalcMiningDur += miningDuration;
     }
     return totalCalcMiningDur;
-}
-
-double Truck::convertTruckEfficiencyToPercent(const double truckEfficiency) const
-{
-    return (truckEfficiency * 100.0);
 }

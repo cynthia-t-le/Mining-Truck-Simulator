@@ -77,7 +77,6 @@ void Simulator::startSimulator()
 
 int Simulator::calcMinTripsPossible()
 {
-    // This function calculates the number of unloads a singular truck can handle during the simulation
     return std::floor(Simulator::kMaxMiningDurationMins / Simulator::kMaxOneCycleTimeMins);
 }
 
@@ -348,11 +347,11 @@ void Simulator::printTruckResults(const Truck &truck, const int truckElapsedTime
                    << "Total Successful Unloaded Trips          = " << truck.getTotalNumberUnloads() << std::endl
                    << "Total Time Spent Waiting in Queue        = " << truck.getTotalQueueWait() << " minutes" << std::endl
                    << "Average Time Spent Waiting in Queue      = "
-                   << std::fixed << std::setprecision(2) << truck.convertAverageQueueTimeToPercent(averageQueueTime) << "%" << std::endl
+                   << std::fixed << std::setprecision(2) << truck.convertToPercent(averageQueueTime) << "%" << std::endl
                    << "Maximum Helium Possible                  = " << Simulator::calcMaxHeliumPossible() << std::endl
                    << "Maximum Unloaded Trips Possible          = " << Simulator::calcMaxTripsPossible() << std::endl
                    << "Truck Efficiency                         = "
-                   << std::fixed << std::setprecision(2) << truck.convertTruckEfficiencyToPercent(truckEfficiency) << "%" << std::endl
+                   << std::fixed << std::setprecision(2) << truck.convertToPercent(truckEfficiency) << "%" << std::endl
                    << "Truck Ending Elapsed Time                = " << truckElapsedTime
                    << std::endl
                    << std::endl;
