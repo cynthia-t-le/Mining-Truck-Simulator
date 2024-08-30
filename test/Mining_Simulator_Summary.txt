@@ -1,0 +1,50 @@
+Starting mining simulation! Number of trucks = 3. Number of stations = 3
+
+TRUCK 0 FINAL RESULTS:
+Total Helium Mined                       = 3067
+Total Mining Duration                    = 3301 minutes
+Calculated Mining Duration for Checking  = 3301 minutes
+Total Successful Unloaded Trips          = 16
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
+Maximum Helium Possible                  = 3570
+Maximum Unloaded Trips Possible          = 34
+Truck Efficiency                         = 85.91%
+Truck Ending Elapsed Time                = 4320
+
+TRUCK 2 FINAL RESULTS:
+Total Helium Mined                       = 3120
+Total Mining Duration                    = 3296 minutes
+Calculated Mining Duration for Checking  = 3296 minutes
+Total Successful Unloaded Trips          = 17
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
+Maximum Helium Possible                  = 3570
+Maximum Unloaded Trips Possible          = 34
+Truck Efficiency                         = 87.39%
+Truck Ending Elapsed Time                = 4320
+
+TRUCK 1 FINAL RESULTS:
+Total Helium Mined                       = 3059
+Total Mining Duration                    = 3315 minutes
+Calculated Mining Duration for Checking  = 3315 minutes
+Total Successful Unloaded Trips          = 19
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
+Maximum Helium Possible                  = 3570
+Maximum Unloaded Trips Possible          = 34
+Truck Efficiency                         = 85.69%
+Truck Ending Elapsed Time                = 4320
+
+STATION 1 FINAL RESULTS:
+Total Helium Received                    = 2832
+Total Trucks Unloaded                    = 17
+
+STATION 0 FINAL RESULTS:
+Total Helium Received                    = 3192
+Total Trucks Unloaded                    = 18
+
+STATION 2 FINAL RESULTS:
+Total Helium Received                    = 3222
+Total Trucks Unloaded                    = 17
+

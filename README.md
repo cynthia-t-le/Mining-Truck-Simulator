@@ -18,11 +18,14 @@ git clone https://github.com/cynthia-t-le/Mining-Truck-Simulator.git
 # Navigate to the project directory
 cd Mining-Truck-Simulator
 
+# Navigate to the src folder
+cd src
+
 # Compile and produce the executable
 # include -DDEBUG if you want to produce the debugging output file, otherwise remove it from the command
-g++ -DDEBUG main.cpp Truck.cpp Site.cpp Simulator.cpp -o MiningSimulator -std=c++20 -pthread
+g++ -DDEBUG main.cpp Truck.cpp Simulator.cpp Site.cpp -o ../bin/MiningSimulator -std=c++20 -pthread
 
-# The executable should now be in your directory as MiningSimulator.exe
+# The executable should now be in your "C:/../Mining-Truck-Simulator/bin" path as MiningSimulator.exe
 ```
 
 To create the unit test executable, follow the steps below:
@@ -36,7 +39,7 @@ cd Mining-Truck-Simulator
 cd test
 
 # Compile and produce the executable
-g++ .\test_main.cpp ..\Simulator.cpp ..\Truck.cpp ..\Site.cpp -o UnitTest -std=c++20 -pthread
+g++ .\test_main.cpp ..\src\Simulator.cpp ..\src\Truck.cpp ..\src\Site.cpp -o UnitTest -std=c++20 -pthread
 
 # The executable should now be in your directory as UnitTest.exe
 ```
@@ -49,6 +52,9 @@ The previous section "How to Create the Executable" must be completed in order t
 # Navigate to the project directory
 cd Mining-Truck-Simulator
 
+# Navigate to the bin folder
+cd bin
+
 # Confirm MiningSimulator.exe is in the working path and run the executable
 .\MiningSimulator.exe
 
@@ -57,6 +63,7 @@ cd Mining-Truck-Simulator
 2     # 2 stations
 
 # Wait for program to finish and check that "Mining_Simulator_Summary.txt" is produced
+# in the "C/../Mining-Truck-Simulator/log" folder path
 # "Mining_Simulator_Debugging_Log.txt" is only produced if -DDEBUG flag was
 # included when compiling
 
@@ -75,8 +82,8 @@ cd Mining-Truck-Simulator
 # Navigate to the test director
 cd test
 
-# Confirm Unit_Test.exe is in the working path and run the executable
-.\Unit_Test.exe
+# Confirm UnitTest.exe is in the working path and run the executable
+.\UnitTest.exe
 
 # Wait for program to finish and confirm that the terminal shows
 ===============================================================================

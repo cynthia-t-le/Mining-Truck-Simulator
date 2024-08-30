@@ -1,9 +1,9 @@
 #define CATCH_CONFIG_MAIN // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
-#include "../Simulator.h"
-#include "../Site.h"
-#include "../Station.h"
-#include "../Truck.h"
+#include "../include/Simulator.h"
+#include "../include/Site.h"
+#include "../include/Station.h"
+#include "../include/Truck.h"
 
 // Compile with this command
 // cd test
