@@ -1,374 +1,134 @@
-Starting mining simulation! Number of trucks = 30. Number of stations = 3
-
-TRUCK 7 FINAL RESULTS:
-Total Helium Mined                       = 3174
-Total Mining Duration                    = 3446 minutes
-Calculated Mining Duration for Checking  = 3446 minutes
-Total Successful Unloaded Trips          = 14
-Total Time Spent Waiting in Queue        = 0 minutes
-Average Time Spent Waiting in Queue      = 0.00%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 88.91%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 28 FINAL RESULTS:
-Total Helium Mined                       = 3310
-Total Mining Duration                    = 3310 minutes
-Calculated Mining Duration for Checking  = 3310 minutes
-Total Successful Unloaded Trips          = 16
-Total Time Spent Waiting in Queue        = 0 minutes
-Average Time Spent Waiting in Queue      = 0.00%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 92.72%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 19 FINAL RESULTS:
-Total Helium Mined                       = 3296
-Total Mining Duration                    = 3554 minutes
-Calculated Mining Duration for Checking  = 3554 minutes
-Total Successful Unloaded Trips          = 15
-Total Time Spent Waiting in Queue        = 0 minutes
-Average Time Spent Waiting in Queue      = 0.00%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 92.32%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 0 FINAL RESULTS:
-Total Helium Mined                       = 3172
-Total Mining Duration                    = 3379 minutes
-Calculated Mining Duration for Checking  = 3379 minutes
-Total Successful Unloaded Trips          = 15
-Total Time Spent Waiting in Queue        = 0 minutes
-Average Time Spent Waiting in Queue      = 0.00%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 88.85%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 9 FINAL RESULTS:
-Total Helium Mined                       = 3104
-Total Mining Duration                    = 3336 minutes
-Calculated Mining Duration for Checking  = 3336 minutes
-Total Successful Unloaded Trips          = 16
-Total Time Spent Waiting in Queue        = 2 minutes
-Average Time Spent Waiting in Queue      = 0.05%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 86.95%
-Truck Ending Elapsed Time                = 4320
+Starting mining simulation! Number of trucks = 10. Number of stations = 3
 
 TRUCK 2 FINAL RESULTS:
-Total Helium Mined                       = 3194
-Total Mining Duration                    = 3300 minutes
-Calculated Mining Duration for Checking  = 3300 minutes
-Total Successful Unloaded Trips          = 16
-Total Time Spent Waiting in Queue        = 2 minutes
-Average Time Spent Waiting in Queue      = 0.05%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 89.47%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 1 FINAL RESULTS:
-Total Helium Mined                       = 3054
-Total Mining Duration                    = 3275 minutes
-Calculated Mining Duration for Checking  = 3275 minutes
-Total Successful Unloaded Trips          = 17
-Total Time Spent Waiting in Queue        = 2 minutes
-Average Time Spent Waiting in Queue      = 0.05%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 85.55%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 25 FINAL RESULTS:
-Total Helium Mined                       = 3185
-Total Mining Duration                    = 3441 minutes
-Calculated Mining Duration for Checking  = 3441 minutes
-Total Successful Unloaded Trips          = 15
-Total Time Spent Waiting in Queue        = 2 minutes
-Average Time Spent Waiting in Queue      = 0.05%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 89.22%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 10 FINAL RESULTS:
-Total Helium Mined                       = 3068
-Total Mining Duration                    = 3183 minutes
-Calculated Mining Duration for Checking  = 3183 minutes
-Total Successful Unloaded Trips          = 18
-Total Time Spent Waiting in Queue        = 2 minutes
-Average Time Spent Waiting in Queue      = 0.05%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 85.94%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 29 FINAL RESULTS:
-Total Helium Mined                       = 3199
-Total Mining Duration                    = 3490 minutes
-Calculated Mining Duration for Checking  = 3490 minutes
-Total Successful Unloaded Trips          = 17
+Total Helium Mined                       = 3055
+Total Mining Duration                    = 3138 minutes
+Calculated Mining Duration for Checking  = 3138 minutes
+Total Successful Unloaded Trips          = 19
 Total Time Spent Waiting in Queue        = 0 minutes
 Average Time Spent Waiting in Queue      = 0.00%
 Maximum Helium Possible                  = 3570
 Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 89.61%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 5 FINAL RESULTS:
-Total Helium Mined                       = 3122
-Total Mining Duration                    = 3354 minutes
-Calculated Mining Duration for Checking  = 3354 minutes
-Total Successful Unloaded Trips          = 15
-Total Time Spent Waiting in Queue        = 2 minutes
-Average Time Spent Waiting in Queue      = 0.05%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 87.45%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 27 FINAL RESULTS:
-Total Helium Mined                       = 3020
-Total Mining Duration                    = 3288 minutes
-Calculated Mining Duration for Checking  = 3288 minutes
-Total Successful Unloaded Trips          = 16
-Total Time Spent Waiting in Queue        = 3 minutes
-Average Time Spent Waiting in Queue      = 0.07%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 84.59%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 15 FINAL RESULTS:
-Total Helium Mined                       = 2992
-Total Mining Duration                    = 3283 minutes
-Calculated Mining Duration for Checking  = 3283 minutes
-Total Successful Unloaded Trips          = 17
-Total Time Spent Waiting in Queue        = 1 minutes
-Average Time Spent Waiting in Queue      = 0.02%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 83.81%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 13 FINAL RESULTS:
-Total Helium Mined                       = 3095
-Total Mining Duration                    = 3248 minutes
-Calculated Mining Duration for Checking  = 3248 minutes
-Total Successful Unloaded Trips          = 16
-Total Time Spent Waiting in Queue        = 2 minutes
-Average Time Spent Waiting in Queue      = 0.05%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 86.69%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 11 FINAL RESULTS:
-Total Helium Mined                       = 3108
-Total Mining Duration                    = 3295 minutes
-Calculated Mining Duration for Checking  = 3295 minutes
-Total Successful Unloaded Trips          = 17
-Total Time Spent Waiting in Queue        = 2 minutes
-Average Time Spent Waiting in Queue      = 0.05%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 87.06%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 16 FINAL RESULTS:
-Total Helium Mined                       = 3288
-Total Mining Duration                    = 3288 minutes
-Calculated Mining Duration for Checking  = 3288 minutes
-Total Successful Unloaded Trips          = 16
-Total Time Spent Waiting in Queue        = 3 minutes
-Average Time Spent Waiting in Queue      = 0.07%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 92.10%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 3 FINAL RESULTS:
-Total Helium Mined                       = 3040
-Total Mining Duration                    = 3278 minutes
-Calculated Mining Duration for Checking  = 3278 minutes
-Total Successful Unloaded Trips          = 17
-Total Time Spent Waiting in Queue        = 1 minutes
-Average Time Spent Waiting in Queue      = 0.02%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 85.15%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 22 FINAL RESULTS:
-Total Helium Mined                       = 3048
-Total Mining Duration                    = 3215 minutes
-Calculated Mining Duration for Checking  = 3215 minutes
-Total Successful Unloaded Trips          = 18
-Total Time Spent Waiting in Queue        = 1 minutes
-Average Time Spent Waiting in Queue      = 0.02%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 85.38%
+Truck Efficiency                         = 85.57%
 Truck Ending Elapsed Time                = 4320
 
 TRUCK 8 FINAL RESULTS:
-Total Helium Mined                       = 3178
-Total Mining Duration                    = 3446 minutes
-Calculated Mining Duration for Checking  = 3446 minutes
-Total Successful Unloaded Trips          = 17
-Total Time Spent Waiting in Queue        = 1 minutes
-Average Time Spent Waiting in Queue      = 0.02%
+Total Helium Mined                       = 3087
+Total Mining Duration                    = 3339 minutes
+Calculated Mining Duration for Checking  = 3339 minutes
+Total Successful Unloaded Trips          = 16
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
 Maximum Helium Possible                  = 3570
 Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 89.02%
+Truck Efficiency                         = 86.47%
 Truck Ending Elapsed Time                = 4320
 
-TRUCK 14 FINAL RESULTS:
-Total Helium Mined                       = 3164
-Total Mining Duration                    = 3164 minutes
-Calculated Mining Duration for Checking  = 3164 minutes
+TRUCK 1 FINAL RESULTS:
+Total Helium Mined                       = 3065
+Total Mining Duration                    = 3182 minutes
+Calculated Mining Duration for Checking  = 3182 minutes
 Total Successful Unloaded Trips          = 18
-Total Time Spent Waiting in Queue        = 2 minutes
-Average Time Spent Waiting in Queue      = 0.05%
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
 Maximum Helium Possible                  = 3570
 Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 88.63%
+Truck Efficiency                         = 85.85%
 Truck Ending Elapsed Time                = 4320
 
-TRUCK 12 FINAL RESULTS:
+TRUCK 5 FINAL RESULTS:
 Total Helium Mined                       = 3043
-Total Mining Duration                    = 3157 minutes
-Calculated Mining Duration for Checking  = 3157 minutes
-Total Successful Unloaded Trips          = 18
-Total Time Spent Waiting in Queue        = 1 minutes
-Average Time Spent Waiting in Queue      = 0.02%
+Total Mining Duration                    = 3146 minutes
+Calculated Mining Duration for Checking  = 3146 minutes
+Total Successful Unloaded Trips          = 19
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
 Maximum Helium Possible                  = 3570
 Maximum Unloaded Trips Possible          = 34
 Truck Efficiency                         = 85.24%
 Truck Ending Elapsed Time                = 4320
 
-TRUCK 20 FINAL RESULTS:
-Total Helium Mined                       = 3094
-Total Mining Duration                    = 3284 minutes
-Calculated Mining Duration for Checking  = 3284 minutes
-Total Successful Unloaded Trips          = 18
-Total Time Spent Waiting in Queue        = 4 minutes
-Average Time Spent Waiting in Queue      = 0.09%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 86.67%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 17 FINAL RESULTS:
-Total Helium Mined                       = 3001
-Total Mining Duration                    = 3294 minutes
-Calculated Mining Duration for Checking  = 3294 minutes
-Total Successful Unloaded Trips          = 19
-Total Time Spent Waiting in Queue        = 2 minutes
-Average Time Spent Waiting in Queue      = 0.05%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 84.06%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 18 FINAL RESULTS:
-Total Helium Mined                       = 3004
-Total Mining Duration                    = 3130 minutes
-Calculated Mining Duration for Checking  = 3130 minutes
-Total Successful Unloaded Trips          = 18
-Total Time Spent Waiting in Queue        = 3 minutes
-Average Time Spent Waiting in Queue      = 0.07%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 84.15%
-Truck Ending Elapsed Time                = 4320
-
 TRUCK 4 FINAL RESULTS:
-Total Helium Mined                       = 3196
-Total Mining Duration                    = 3425 minutes
-Calculated Mining Duration for Checking  = 3425 minutes
+Total Helium Mined                       = 3086
+Total Mining Duration                    = 3354 minutes
+Calculated Mining Duration for Checking  = 3354 minutes
 Total Successful Unloaded Trips          = 17
-Total Time Spent Waiting in Queue        = 3 minutes
-Average Time Spent Waiting in Queue      = 0.07%
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
 Maximum Helium Possible                  = 3570
 Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 89.52%
+Truck Efficiency                         = 86.44%
 Truck Ending Elapsed Time                = 4320
 
-TRUCK 21 FINAL RESULTS:
-Total Helium Mined                       = 2982
-Total Mining Duration                    = 3129 minutes
-Calculated Mining Duration for Checking  = 3129 minutes
+TRUCK 0 FINAL RESULTS:
+Total Helium Mined                       = 3038
+Total Mining Duration                    = 3177 minutes
+Calculated Mining Duration for Checking  = 3177 minutes
+Total Successful Unloaded Trips          = 19
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
+Maximum Helium Possible                  = 3570
+Maximum Unloaded Trips Possible          = 34
+Truck Efficiency                         = 85.10%
+Truck Ending Elapsed Time                = 4320
+
+TRUCK 9 FINAL RESULTS:
+Total Helium Mined                       = 3078
+Total Mining Duration                    = 3358 minutes
+Calculated Mining Duration for Checking  = 3358 minutes
+Total Successful Unloaded Trips          = 16
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
+Maximum Helium Possible                  = 3570
+Maximum Unloaded Trips Possible          = 34
+Truck Efficiency                         = 86.22%
+Truck Ending Elapsed Time                = 4320
+
+TRUCK 3 FINAL RESULTS:
+Total Helium Mined                       = 2878
+Total Mining Duration                    = 3149 minutes
+Calculated Mining Duration for Checking  = 3149 minutes
 Total Successful Unloaded Trips          = 18
 Total Time Spent Waiting in Queue        = 1 minutes
 Average Time Spent Waiting in Queue      = 0.02%
 Maximum Helium Possible                  = 3570
 Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 83.53%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 26 FINAL RESULTS:
-Total Helium Mined                       = 2802
-Total Mining Duration                    = 3090 minutes
-Calculated Mining Duration for Checking  = 3090 minutes
-Total Successful Unloaded Trips          = 20
-Total Time Spent Waiting in Queue        = 4 minutes
-Average Time Spent Waiting in Queue      = 0.09%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 78.49%
-Truck Ending Elapsed Time                = 4320
-
-TRUCK 23 FINAL RESULTS:
-Total Helium Mined                       = 3048
-Total Mining Duration                    = 3155 minutes
-Calculated Mining Duration for Checking  = 3155 minutes
-Total Successful Unloaded Trips          = 18
-Total Time Spent Waiting in Queue        = 1 minutes
-Average Time Spent Waiting in Queue      = 0.02%
-Maximum Helium Possible                  = 3570
-Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 85.38%
+Truck Efficiency                         = 80.62%
 Truck Ending Elapsed Time                = 4320
 
 TRUCK 6 FINAL RESULTS:
-Total Helium Mined                       = 2989
-Total Mining Duration                    = 3215 minutes
-Calculated Mining Duration for Checking  = 3215 minutes
+Total Helium Mined                       = 3098
+Total Mining Duration                    = 3098 minutes
+Calculated Mining Duration for Checking  = 3098 minutes
 Total Successful Unloaded Trips          = 19
-Total Time Spent Waiting in Queue        = 1 minutes
-Average Time Spent Waiting in Queue      = 0.02%
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
 Maximum Helium Possible                  = 3570
 Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 83.73%
+Truck Efficiency                         = 86.78%
 Truck Ending Elapsed Time                = 4320
 
-TRUCK 24 FINAL RESULTS:
-Total Helium Mined                       = 2986
-Total Mining Duration                    = 3254 minutes
-Calculated Mining Duration for Checking  = 3254 minutes
-Total Successful Unloaded Trips          = 20
-Total Time Spent Waiting in Queue        = 1 minutes
-Average Time Spent Waiting in Queue      = 0.02%
+TRUCK 7 FINAL RESULTS:
+Total Helium Mined                       = 3014
+Total Mining Duration                    = 3158 minutes
+Calculated Mining Duration for Checking  = 3158 minutes
+Total Successful Unloaded Trips          = 18
+Total Time Spent Waiting in Queue        = 0 minutes
+Average Time Spent Waiting in Queue      = 0.00%
 Maximum Helium Possible                  = 3570
 Maximum Unloaded Trips Possible          = 34
-Truck Efficiency                         = 83.64%
+Truck Efficiency                         = 84.43%
 Truck Ending Elapsed Time                = 4320
 
 STATION 2 FINAL RESULTS:
-Total Helium Received                    = 29113
-Total Trucks Unloaded                    = 167
+Total Helium Received                    = 10991
+Total Trucks Unloaded                    = 59
 
 STATION 0 FINAL RESULTS:
-Total Helium Received                    = 31700
-Total Trucks Unloaded                    = 174
+Total Helium Received                    = 9321
+Total Trucks Unloaded                    = 59
 
 STATION 1 FINAL RESULTS:
-Total Helium Received                    = 32143
-Total Trucks Unloaded                    = 170
+Total Helium Received                    = 10130
+Total Trucks Unloaded                    = 61
 
