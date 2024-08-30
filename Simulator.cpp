@@ -89,6 +89,7 @@ int Simulator::calcMaxTripsPossible()
 
 int Simulator::calcMinHeliumPossible()
 {
+    // This assumes there is no waiting time at the stations
     return (Simulator::calcMinTripsPossible() * Site::kMinMiningMinutes * Simulator::kHeliumMiningRatePerMin);
 }
 

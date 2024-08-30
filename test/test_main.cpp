@@ -46,14 +46,14 @@ TEST_CASE("Mining Simulation for 30 trucks and 3 station.")
     for (auto &truck : trucks)
     {
         int heliumMined = truck.getTotalMinedHelium();
-        // Check to see if truck's total mined helium is less than min possible helium mined in 72 hours
-        REQUIRE(heliumMined >= minPossibleHeliumMined);
+        int totalNumberUnloads = truck.getTotalNumberUnloads();
 
-        // Check to see if truck's total mined helium exceeds the max possible helium mined in 72 hours
+        // Get the truck's total mined helium and compare against min and max
+        REQUIRE(heliumMined >= minPossibleHeliumMined);
         REQUIRE(heliumMined <= maxPossibleHeliumMined);
 
         // Get the truck's total unloaded to compare against min and max
-        int totalNumberUnloads = truck.getTotalNumberUnloads();
+        REQUIRE(totalNumberUnloads >= minTripPossible);
         REQUIRE(totalNumberUnloads <= maxTripPossible);
 
         // Get the summation of all the helium mined from the trucks
